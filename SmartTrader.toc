@@ -1,0 +1,8 @@
+## Interface: 20505
+## Title: SmartTrader
+## Notes: SmartTrader addon.
+## Author: You
+## Version: 1.0.0
+
+SmartTrader.lua
+SlashCommands.lua
