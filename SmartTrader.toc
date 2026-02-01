@@ -2,7 +2,7 @@
 ## Title: SmartTrader
 ## Notes: SmartTrader addon.
 ## Author: You
-## Version: 1.1.0
+## Version: 1.1.1
 
 SmartTrader.lua
 SlashCommands.lua

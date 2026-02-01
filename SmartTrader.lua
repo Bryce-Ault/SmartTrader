@@ -33,7 +33,7 @@ frame:RegisterEvent("CHAT_MSG_BG_SYSTEM_NEUTRAL")
 frame:SetScript("OnEvent", function(self, event, arg1, ...)
     if event == "PLAYER_ENTERING_WORLD" then
         ns.initialized = true
-        ns.Print("Loaded v1.1.0")
+        ns.Print("Loaded v1.1.1")
 
         C_Timer.After(2, function()
             if IsInBattleground() then
@@ -43,12 +43,16 @@ frame:SetScript("OnEvent", function(self, event, arg1, ...)
                     ns.Print("Battleground detected.")
                 end
             else
+                if ns.inBattleground and ns.IsBlockingTrades() then
+                    ns.SetBlockTrades(false)
+                    ns.Print("Left battleground.")
+                end
                 ns.inBattleground = false
             end
         end)
 
     elseif event == "CHAT_MSG_BG_SYSTEM_NEUTRAL" then
-        if arg1 and arg1:find("has begun") then
+        if arg1 and arg1:find("has begun") and IsInBattleground() then
             ns.inBattleground = true
             if not ns.IsBlockingTrades() then
                 ns.SetBlockTrades(true)
