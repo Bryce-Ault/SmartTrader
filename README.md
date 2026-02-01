@@ -1,12 +1,13 @@
 # SmartTrader
 
-A World of Warcraft addon that automatically blocks incoming trade requests and notifies the other player with a whisper.
+A World of Warcraft addon that automatically manages the in-game Block Trades setting based on your current instance.
 
 ## Features
 
-- Automatically enables trade blocking when entering a battleground
-- Cancels incoming trade windows and whispers the other player
-- Toggle trade blocking on or off at any time with a slash command
+- Automatically enables Block Trades when entering a battleground
+- Automatically disables Block Trades when leaving a battleground
+- Does not activate in arenas — only battlegrounds
+- Toggle trade blocking manually at any time with a slash command
 
 ## Installation
 
@@ -21,6 +22,6 @@ Copy the `SmartTrader` folder into your `Interface/AddOns` directory.
 
 ## Usage
 
-Trade blocking is **off by default** and **automatically enables when you enter a battleground**. When blocked, incoming trades will be cancelled and the other player receives a whisper: *"I'm not trading right now, thank you."*
+Trade blocking is managed through the game's built-in Block Trades setting. SmartTrader **automatically enables** it when you enter a battleground and **automatically disables** it when you leave. Arenas are excluded.
 
-You can manually toggle blocking at any time with `/st trade`, including turning it off during a battleground if needed.
+You can manually toggle blocking at any time with `/st trade`.
